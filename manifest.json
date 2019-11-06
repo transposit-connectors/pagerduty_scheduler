@@ -36,10 +36,11 @@
         "id": "post_message_to_incoming_webhook",
         "tql": {
           "parameters": [{
-            "name": "response_url",
-            "type": "STRING"
+            "name": "webhook_url",
+            "type": "STRING",
+            "required": true
           }],
-          "tql": "SELECT * FROM slack_webhook.post_message_to_incoming_webhook\n  WHERE webhook_url=@response_url\n  AND text='hello world'\n  -- AND attachments=(SELECT [])\n  -- AND blocks=(SELECT [])\n  AND response_type='in_channel'\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+          "tql": "SELECT * FROM slack_webhook.post_message_to_incoming_webhook\n  WHERE webhook_url=@webhook_url\n  AND text='hello world'\n  -- AND attachments=(SELECT [])\n  -- AND blocks=(SELECT [])\n  AND response_type='in_channel'\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
       }],
       "dataConnections": [{
