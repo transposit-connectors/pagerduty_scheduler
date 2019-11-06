@@ -12,6 +12,7 @@
     if (user) {
       console.log(user);
       var test = api.run("slack_webhook.post_message_to_incoming_webhook", {response_url : response_url});
+      console.log(test);
       var text_match = /(\S+) (\S+)/.exec(parsed_body.text.trim());
       if (text_match) {
         console.log(text_match);
