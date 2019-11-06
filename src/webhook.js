@@ -9,6 +9,7 @@
     let user = api.user({type: "slack", workspaceId, userId});
     if (user) {
       console.log(user);
+      var test = api.run("slack_webhook.respond_to_slash_command");
       var text_match = /(\S+) (\S+)/.exec(parsed_body.text.trim());
       if (text_match) {
         console.log(text_match);
