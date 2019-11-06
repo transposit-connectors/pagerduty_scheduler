@@ -23,16 +23,6 @@
           "webhook": true
         }
       }, {
-        "id": "get_slack_message",
-        "function": {
-          "parameters": [{
-            "name": "user",
-            "type": "STRING"
-          }],
-          "js": "get_slack_message.js",
-          "lang": "js"
-        }
-      }, {
         "id": "post_message_to_incoming_webhook",
         "tql": {
           "parameters": [{
