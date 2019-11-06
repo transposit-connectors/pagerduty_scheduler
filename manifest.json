@@ -35,6 +35,11 @@
       }, {
         "id": "post_msg",
         "function": {
+          "parameters": [{
+            "name": "webhook_url",
+            "type": "STRING",
+            "required": true
+          }],
           "js": "post_msg.js",
           "lang": "js"
         }

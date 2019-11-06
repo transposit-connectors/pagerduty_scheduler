@@ -1,5 +1,5 @@
   const parameters = {};
-  parameters.webhook_url = @webhook_url;
+  parameters.webhook_url = params.webhook_url;
   parameters.text = 'helloooo world';
   //parameters.blocks = (SELECT []);
   //parameters.thread_ts = '<string>';
