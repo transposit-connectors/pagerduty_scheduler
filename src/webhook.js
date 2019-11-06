@@ -9,7 +9,7 @@
     let user = api.user({type: "slack", workspaceId, userId});
     if (user) {
       console.log(response_url);
-      var test = api.run("slack_webhook.post_message_to_incoming_webhook", {response_url : response_url});
+      var test = api.run("slack_webhook.post_message_to_incoming_webhook", {response_url: response_url});
       console.log(test);
       // var text_match = /(\S+) (\S+)/.exec(parsed_body.text.trim());
       // if (text_match) {
