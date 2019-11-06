@@ -39,7 +39,7 @@
             "name": "http_event",
             "type": "OBJECT"
           }],
-          "tql": "SELECT * FROM slack_webhook.respond_to_slash_command\n  WHERE http_event=@http_event\n  AND text='hello world'\n  AND response_type='in-channel'\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+          "tql": "SELECT * FROM slack_webhook.respond_to_slash_command\n  WHERE http_event=@http_event\n  AND text='hello world'\n  AND response_type='ephemeral'\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
       }],
       "dataConnections": [{
