@@ -1,0 +1,7 @@
+  const parameters = {};
+  parameters.webhook_url = @webhook_url;
+  parameters.text = 'helloooo world';
+  //parameters.blocks = (SELECT []);
+  //parameters.thread_ts = '<string>';
+  //parameters.response_type = '<string>';
+  return api.run('slack_webhook.post_message_to_incoming_webhook', parameters);
