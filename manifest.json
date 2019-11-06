@@ -33,6 +33,11 @@
           "js": "post_msg.js",
           "lang": "js"
         }
+      }, {
+        "id": "acknowledge_slash_command",
+        "tql": {
+          "tql": "SELECT * FROM slack_webhook.acknowledge_slash_command\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+        }
       }],
       "dataConnections": [{
         "ref": "slack_identify.raw",
