@@ -8,13 +8,13 @@
   setImmediate(() => {
     let user = api.user({type: "slack", workspaceId, userId});
     if (user) {
-      var initial_response = api.run("slack_webhook.post_message_to_incoming_webhook", {webhook_url: response_url});
+      var initial_response = api.run("this.post_message_to_incoming_webhook", {webhook_url: response_url});
       console.log(initial_response);
     } else {
-      api.run("slack_webhook.post_to_response_url", {
-        response_url: response_url,
-        post_body: {text: 'Please configure your user at ' +  env.getBuiltin().appUrl}
-      });      
+      // api.run("slack_webhook.post_to_response_url", {
+      //   response_url: response_url,
+      //   post_body: {text: 'Please configure your user at ' +  env.getBuiltin().appUrl}
+      // });      
     }
   });
   return { status_code: 200 };
