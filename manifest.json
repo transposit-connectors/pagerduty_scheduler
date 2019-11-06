@@ -2,11 +2,6 @@
   "v2": {
     "transposit": {
       "dependencies": [{
-        "name": "transposit/slack:v2.*.*",
-        "alias": "slack",
-        "title": "Slack",
-        "description": "Authorize this connector if you want to use the Slack API."
-      }, {
         "name": "transposit/slack_webhook:v2.*.*",
         "alias": "slack_webhook"
       }],
@@ -20,7 +15,8 @@
             },
             "type": "OBJECT"
           }],
-          "js": "webhook.js"
+          "js": "webhook.js",
+          "lang": "js"
         },
         "access": {
           "requireApiKey": true,
@@ -33,7 +29,8 @@
             "name": "user",
             "type": "STRING"
           }],
-          "js": "get_slack_message.js"
+          "js": "get_slack_message.js",
+          "lang": "js"
         }
       }, {
         "id": "test_post_message",
