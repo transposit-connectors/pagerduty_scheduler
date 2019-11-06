@@ -4,6 +4,9 @@
       "dependencies": [{
         "name": "transposit/slack_webhook:v2.*.*",
         "alias": "slack_webhook"
+      }, {
+        "name": "transposit/pagerduty:v1.*.*",
+        "alias": "pagerduty"
       }],
       "operations": [{
         "id": "webhook",
