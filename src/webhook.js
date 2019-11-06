@@ -23,7 +23,7 @@
       //     response_url: response_url,
       //     post_body: {text: "Couldn't parse the source and target urls."}
       //   });      
-      }
+      // }
     } else {
       api.run("slack_webhook.post_to_response_url", {
         response_url: response_url,
