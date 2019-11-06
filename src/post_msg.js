@@ -12,6 +12,7 @@
 			}
 		}
 	];
+  var response_type = "in_channel";
   
-  return api.run("slack_webhook.post_message_to_incoming_webhook", {webhook_url, text});
+  return api.run("slack_webhook.post_message_to_incoming_webhook", {webhook_url, text, blocks, response_type});
 }
