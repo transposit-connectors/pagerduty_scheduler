@@ -8,6 +8,9 @@
   setImmediate(() => {
     if (parsed_body.payload) {
       console.log(JSON.parse(parsed_body.payload));
+      if (parsed_body.payload.actions.[0].value == "") {
+        
+      }
     }
     let user = api.user({type: "slack", workspaceId, userId});
     if (user) {
