@@ -20,6 +20,7 @@
       		  api.run("this.respond_to_override_request_step_3",{http_event: http_event});              
             } else if (action_payload.actions[0].action_id == "end_time") { 
               var end_time = action_payload.actions[0].selected_option.text.text;
+      		  api.run("this.respond_to_override_request_step_3",{http_event: http_event, start_date: start_date, end_date: end_date, start_time: start_time, end_time: end_time});                            
             } else if (action_payload.actions[0].action_id == "override_request_submit") {
               console.log("COMPLETE!");
             }
