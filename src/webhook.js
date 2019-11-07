@@ -8,14 +8,14 @@
   setImmediate(() => {
     if (parsed_body.payload) {
       const action_payload = JSON.parse(parsed_body.payload);
-      if (action_payload.actions && action_payload.actions[0].value == "override_request_submission") {
+      if (action_payload.actions && action_payload.actions[0].action_id == "start_date") {
         console.log("A submission has been receieved");
         var resp = api.run("this.respond_to_interaction", {http_event: http_event});
       }
     }
     let user = api.user({type: "slack", workspaceId, userId});
     if (user) {
-      var command_response = api.run("this.respond_to_slash_command",{http_event: http_event});
+      var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
     } else {
       // api.run("slack_webhook.post_to_response_url", {
       //   response_url: response_url,
