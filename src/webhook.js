@@ -11,11 +11,11 @@
     	if (action_payload.actions) {
             if (action_payload.actions[0].action_id == "start_date") {
               var start_date = action_payload.actions[0].selected_date;
-              // respond to interaction with asking for end date
+      		  api.run("this.respond_to_override_request_step_1",{http_event: http_event});
             } else if (action_payload.actions[0].action_id == "end_date") {
-              
+              var end_date = action_payload.actions[0].selected_date;              
             } else if (action_payload.actions[0].action_id == "start_time") {
-              
+              var start_time = action_payload.actions[0].selected_date;
             } else if (action_payload.actions[0].action_id == "end_time") { 
             
             } else if (action_payload.actions[0].action_id == "override_request_submit") {

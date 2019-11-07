@@ -1,7 +1,11 @@
 (params) => {
-  
   const parameters = {};
   parameters.http_event = params.http_event;
+  parameters.text = '<string>';
+  parameters.response_type = 'ephemeral';
+  return api.run('slack_webhook.respond_to_app_action', parameters);
+  
+
   parameters.blocks = [
 	{
 		"type": "section",
