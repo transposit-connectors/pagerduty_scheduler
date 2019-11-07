@@ -26,7 +26,7 @@
 						"text": "Confirm"
 					},
 					"style": "primary",
-					"value": "override_request_submission"
+					"value": "override_request_submit"
 				}
 			]
 		}];
