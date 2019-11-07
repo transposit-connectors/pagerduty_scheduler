@@ -7,11 +7,22 @@
   
   setImmediate(() => {
     if (parsed_body.payload) {
-      const action_payload = JSON.parse(parsed_body.payload);
-      if (action_payload.actions && action_payload.actions[0].action_id == "start_date") {
-        console.log("A submission has been receieved");
-        var resp = api.run("this.respond_to_interaction", {http_event: http_event});
-      }
+    	const action_payload = JSON.parse(parsed_body.payload);
+    	if (action_payload.actions) {
+            if (action_payload.actions[0].action_id == "start_date") {
+              var start_date = action_payload.actions[0].selected_date;
+              // respond to interaction with asking for end date
+            } else if (action_payload.actions[0].action_id == "end_date") {
+              
+            } else if (action_payload.actions[0].action_id == "start_time") {
+              
+            } else if (action_payload.actions[0].action_id == "end_time") { 
+            
+            } else if (action_payload.actions[0].action_id == "override_request_submit") {
+              
+            }
+             // var resp = api.run("this.respond_to_interaction", {http_event: http_event});
+    	}
     }
     let user = api.user({type: "slack", workspaceId, userId});
     if (user) {
