@@ -15,18 +15,91 @@
 		}
 	},
 	{
-		"type": "actions",
-		"elements": [
-			{
-				"type": "datepicker",
-				"action_id": "end_date",
-				"placeholder": {
-					"type": "plain_text",
-					"text": "End date"
-				}
-			}
-          ]
-    }];
+			"type": "actions",
+			"elements": [
+				{
+					"type": "static_select",
+					"action_id": "start_time",
+					"placeholder": {
+						"type": "plain_text",
+						"text": "Start time",
+						"emoji": true
+					},
+					"options": [
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "0:00",
+								"emoji": true
+							},
+							"value": "value-0"
+						},
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "1:00",
+								"emoji": true
+							},
+							"value": "value-1"
+						},
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "2:00",
+								"emoji": true
+							},
+							"value": "value-2"
+						},
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "3:00",
+								"emoji": true
+							},
+							"value": "value-3"
+						},
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "4:00",
+								"emoji": true
+							},
+							"value": "value-4"
+						},
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "5:00",
+								"emoji": true
+							},
+							"value": "value-5"
+						},
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "6:00",
+								"emoji": true
+							},
+							"value": "value-6"
+						},
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "7:00",
+								"emoji": true
+							},
+							"value": "value-7"
+						},
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "8:00",
+								"emoji": true
+							},
+							"value": "value-8"
+						}                      
+					]
+				}];
   parameters.response_type = 'ephemeral';
   
   return api.run('slack_webhook.respond_to_interaction', parameters);
