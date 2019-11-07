@@ -16,5 +16,7 @@
       // });      
     }
   });
-  return api.run("slack_webhook.acknowledge_slash_command");
+  //return api.run("slack_webhook.acknowledge_slash_command");
+  return { status_code: 200 };
+
 }
