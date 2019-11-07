@@ -20,13 +20,13 @@
 			"elements": [
 				{
 					"type": "button",
+                  	"action_id": "override_request_confirmation",
 					"text": {
 						"type": "plain_text",
 						"emoji": true,
 						"text": "Confirm"
 					},
-					"style": "primary",
-					"value": "override_request_submit"
+					"style": "primary"
 				}
 			]
 		}];
