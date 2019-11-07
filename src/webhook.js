@@ -20,7 +20,7 @@
       		  api.run("this.respond_to_override_request_step_3",{http_event: http_event});              
             } else if (action_payload.actions[0].action_id == "end_time") { 
               stash.put("end_time",action_payload.actions[0].selected_option.text.text);
-      		  api.run("this.respond_to_override_request_step_4",{http_event: http_event, start_date: stash.get("start_date"), end_date: stash.get("end_date"), start_time: stash.get("start_time"), end_time: stash.get("end_date")});                            
+      		  api.run("this.respond_to_override_request_step_4",{http_event: http_event, start_date: stash.get("start_date"), end_date: stash.get("end_date"), start_time: stash.get("start_time"), end_time: stash.get("end_time")});                            
             } else if (action_payload.actions[0].action_id == "override_request_submit") {
               console.log("COMPLETE!");
             }
