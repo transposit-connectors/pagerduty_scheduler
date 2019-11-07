@@ -50,6 +50,12 @@
         "tql": {
           "tql": "SELECT * FROM pagerduty.post_schedules_by_id_overrides\n  WHERE id='<required_string>'\n  AND $body=(SELECT {\n    'override' : {\n      'start' : '<required_date-time>',\n      'end' : '<required_date-time>',\n      'id' : '<string>',\n      'user' : {\n        'summary' : '<string>',\n        'html_url' : '<url>',\n        'self' : '<url>',\n        'id' : '<string>',\n        'type' : 'user | user_reference'\n      }\n    }\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
+      }, {
+        "id": "command_response",
+        "function": {
+          "js": "command_response.js",
+          "lang": "js"
+        }
       }],
       "dataConnections": [{
         "ref": "slack_identify.raw",
