@@ -8,7 +8,7 @@
   setImmediate(() => {
     let user = api.user({type: "slack", workspaceId, userId});
     if (user) {
-      var command_response = api.run("this.command_response",{http_event: http_event});
+      var command_response = api.run("this.respond_to_slash_command",{http_event: http_event});
     } else {
       // api.run("slack_webhook.post_to_response_url", {
       //   response_url: response_url,
