@@ -84,6 +84,17 @@
           "js": "respond_to_override_request_step_2.js",
           "lang": "js"
         }
+      }, {
+        "id": "respond_to_override_request_step_3",
+        "function": {
+          "parameters": [{
+            "name": "http_event",
+            "type": "STRING",
+            "required": true
+          }],
+          "js": "respond_to_override_request_step_3.js",
+          "lang": "js"
+        }
       }],
       "dataConnections": [{
         "ref": "slack_identify.raw",
