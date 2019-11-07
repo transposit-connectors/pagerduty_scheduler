@@ -1,8 +1,11 @@
 (params) => {
+
   const parameters = {};
   parameters.http_event = params.http_event;
+  parameters.delete_original = false;
+  parameters.replace_original = true;
   // parameters.text = '<string>';
-  parameters.response_type = 'ephemeral';  
+  // parameters.attachments = (SELECT []);
   parameters.blocks = [
 	{
 		"type": "section",
@@ -24,8 +27,9 @@
 			}
           ]
     }];
-
-  return api.run('slack_webhook.respond_to_app_action', parameters);
+  parameters.response_type = 'ephemeral';
+  
+  return api.run('slack_webhook.respond_to_interaction', parameters);
   return {
     mission: "complete"
   };

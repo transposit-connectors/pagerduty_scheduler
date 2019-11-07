@@ -15,11 +15,11 @@
             } else if (action_payload.actions[0].action_id == "end_date") {
               var end_date = action_payload.actions[0].selected_date;              
             } else if (action_payload.actions[0].action_id == "start_time") {
-              var start_time = action_payload.actions[0].selected_date;
+              var start_time = action_payload.actions[0].;
             } else if (action_payload.actions[0].action_id == "end_time") { 
-            
+              var end_time = action_payload.actions[0].selected_option.text.text;
             } else if (action_payload.actions[0].action_id == "override_request_submit") {
-              
+              console.log("COMPLETE!");
             }
              // var resp = api.run("this.respond_to_interaction", {http_event: http_event});
     	}
