@@ -6,7 +6,9 @@
   const response_url = parsed_body.response_url; 
     
   setImmediate(() => {
-    console.log(JSON.parse(parsed_body.payload));
+    if (parsed_body.payload) {
+      console.log(JSON.parse(parsed_body.payload));
+    }
     let user = api.user({type: "slack", workspaceId, userId});
     if (user) {
       var command_response = api.run("this.respond_to_slash_command",{http_event: http_event});
