@@ -99,7 +99,10 @@
 							"value": "value-8"
 						}                      
 					]
-				}];
+				}
+            ]
+    }
+  ];
   parameters.response_type = 'ephemeral';
   
   return api.run('slack_webhook.respond_to_interaction', parameters);
