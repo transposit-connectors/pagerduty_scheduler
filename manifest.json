@@ -41,6 +41,16 @@
           "js": "command_response.js",
           "lang": "js"
         }
+      }, {
+        "id": "respond_to_interaction",
+        "tql": {
+          "parameters": [{
+            "name": "http_event",
+            "type": "STRING",
+            "required": true
+          }],
+          "tql": "SELECT * FROM slack_webhook.respond_to_interaction\n  WHERE http_event=@http_event\n  AND delete_original=true\n  AND replace_original=true\n  AND text='This has replaced the UI'\n  -- AND blocks=(SELECT [])\n  AND response_type='ephemeral'\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+        }
       }],
       "dataConnections": [{
         "ref": "slack_identify.raw",
