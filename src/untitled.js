@@ -11,8 +11,8 @@
 		"type": "section",
 		"text": {
 			"type": "mrkdwn",
-			"text": "You've requested a PagerDuty override for " + params.start_date + " - " + params.end_date +
-          params.start_time + " - " + params.end_time
+			"text": "You've requested a PagerDuty override for " + params.start_date + " at " + params.start_time +
+          + " until " + params.end_date + " at " + params.end_time
 		}
 	},
   {
