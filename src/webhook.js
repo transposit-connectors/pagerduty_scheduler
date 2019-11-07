@@ -8,9 +8,7 @@
   setImmediate(() => {
     if (parsed_body.payload) {
       const action_payload = JSON.parse(parsed_body.payload);
-      console.log();
-      if (action_payload.actions) {
-      //if (parsed_body.payload.actions && parsed_body.payload.actions[0].value == "override_request_submission") {
+      if (action_payload.actions && action_payload.actions[0].value == "override_request_submission") {
         console.log("A submission has been receieved");
         var resp = api.run("this.respond_to_interaction", {http_event: http_event});
       }
