@@ -53,6 +53,11 @@
       }, {
         "id": "command_response",
         "function": {
+          "parameters": [{
+            "name": "http_event",
+            "type": "STRING",
+            "required": true
+          }],
           "js": "command_response.js",
           "lang": "js"
         }
