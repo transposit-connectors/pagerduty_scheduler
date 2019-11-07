@@ -54,6 +54,11 @@
       }, {
         "id": "respond_to_override_request_step_0",
         "function": {
+          "parameters": [{
+            "name": "http_event",
+            "type": "STRING",
+            "required": true
+          }],
           "js": "respond_to_override_request_step_0.js",
           "lang": "js"
         }
