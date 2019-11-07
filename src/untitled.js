@@ -12,7 +12,7 @@
 		"text": {
 			"type": "mrkdwn",
 			"text": "You've requested a PagerDuty override for " + params.start_date + "-" + params.end_date +
-          params.start_time + "-" + params.end_time;
+          params.start_time + "-" + params.end_time
 		}
 	},
   {
