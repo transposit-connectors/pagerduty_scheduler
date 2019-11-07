@@ -73,6 +73,12 @@
           "js": "respond_to_override_request_step_1.js",
           "lang": "js"
         }
+      }, {
+        "id": "respond_to_override_request_step_2",
+        "function": {
+          "js": "respond_to_override_request_step_2.js",
+          "lang": "js"
+        }
       }],
       "dataConnections": [{
         "ref": "slack_identify.raw",
