@@ -12,7 +12,7 @@
 		"text": {
 			"type": "mrkdwn",
 			"text": "You've requested a PagerDuty override for " + params.start_date + " at " + params.start_time 
-          + " until " + params.end_date + " at " + params.end_time
+          + " until " + params.end_date + " at " + params.end_time + ". Please confirm."
 		}
 	},
   {
@@ -23,7 +23,7 @@
 					"text": {
 						"type": "plain_text",
 						"emoji": true,
-						"text": "Submit"
+						"text": "Confirm"
 					},
 					"style": "primary",
 					"value": "override_request_submission"
