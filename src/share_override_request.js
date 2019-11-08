@@ -4,8 +4,6 @@
   parameters.http_event = params.http_event;
   parameters.delete_original = false;
   parameters.replace_original = false;
-  // parameters.text = '<string>';
-  // parameters.attachments = (SELECT []);
   parameters.blocks = [
 		{
 			"type": "section",
@@ -16,12 +14,12 @@
 			},
 			"accessory": {
 				"type": "button",
+              	"action_id": "accept_override_request",
 				"text": {
 					"type": "plain_text",
 					"text": "Yes",
 					"emoji": true
-				},
-				"value": "click_me_123"
+				}
 			}
 		}
 	];
