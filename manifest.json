@@ -135,6 +135,18 @@
           "parameters": [{
             "name": "http_event",
             "type": "STRING"
+          }, {
+            "name": "start_date",
+            "type": "STRING"
+          }, {
+            "name": "end_date",
+            "type": "STRING"
+          }, {
+            "name": "start_time",
+            "type": "STRING"
+          }, {
+            "name": "end_time",
+            "type": "STRING"
           }],
           "js": "share_override_request.js",
           "lang": "js"
