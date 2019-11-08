@@ -24,6 +24,8 @@
             } else if (action_payload.actions[0].action_id == "override_request_confirmation") {
       		  api.run("this.respond_to_override_request_step_5",{http_event: http_event}); 
               api.run("this.share_override_request", {http_event: http_event,start_date: stash.get("start_date"), end_date: stash.get("end_date"), start_time: stash.get("start_time"), end_time: stash.get("end_time")});
+            } else if (action_payload.actions[0].action_id == "accept_override_request") {
+              console.log("call pagerduty api");
             }
     	}
     }
