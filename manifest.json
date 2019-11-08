@@ -129,6 +129,12 @@
           "js": "respond_to_override_request_step_5.js",
           "lang": "js"
         }
+      }, {
+        "id": "share_override_request",
+        "function": {
+          "js": "share_override_request.js",
+          "lang": "js"
+        }
       }],
       "dataConnections": [{
         "ref": "slack_identify.raw",
