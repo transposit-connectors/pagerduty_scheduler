@@ -132,6 +132,10 @@
       }, {
         "id": "share_override_request",
         "function": {
+          "parameters": [{
+            "name": "http_event",
+            "type": "STRING"
+          }],
           "js": "share_override_request.js",
           "lang": "js"
         }
