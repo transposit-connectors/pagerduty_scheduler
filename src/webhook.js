@@ -27,10 +27,8 @@
             } else if (action_payload.actions[0].action_id == "accept_override_request") {
               console.log("call pagerduty api");
               var start_date_time = stash.get("start_date") + " " + stash.get("start_time") + " UTC";
-              start_date_time = start_date_time.toISOString();
               var end_date_time = stash.get("end_date") + " " + stash.get("end_time") + " UTC";
-              end_date_time = end_date_time.toISOString();
-              api.run("this.post_schedules_by_id_overrides", {start: start_date_time, end: end_date_time});
+              api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString()});
             }
     	}
     }
