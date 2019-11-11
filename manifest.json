@@ -166,6 +166,10 @@
       }, {
         "id": "confirm_override_scheduled",
         "function": {
+          "parameters": [{
+            "name": "http_event",
+            "type": "STRING"
+          }],
           "js": "confirm_override_scheduled.js",
           "lang": "js"
         }
