@@ -25,9 +25,9 @@
       		  api.run("this.respond_to_override_request_step_5",{http_event: http_event}); 
               api.run("this.share_override_request", {http_event: http_event,start_date: stash.get("start_date"), end_date: stash.get("end_date"), start_time: stash.get("start_time"), end_time: stash.get("end_time")});
             } else if (action_payload.actions[0].action_id == "accept_override_request") {
-              var start_date_time = stash.get("start_date") + " " + stash.get("start_time") + " UTC";
+              var start_date_time_string = stash.get("start_date") + " " + stash.get("start_time") + " UTC";
               var end_date_time = stash.get("end_date") + " " + stash.get("end_time") + " UTC";
-              console.log(start_date_time);
+              var start_date_time = new Date(start_date_time_string);
               console.log(start_date_time.toISOString());
               //api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString()});
             }
