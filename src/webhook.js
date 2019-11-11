@@ -30,8 +30,8 @@
               var start_date_time = new Date(start_date_time_string);
               var end_date_time = new Date(end_date_time_string);
               var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString()});
-              console.log(pageduty_override_response.id);
-              if (pageduty_override_response.id) {
+              console.log(pageduty_override_response.override.id);
+              if (pageduty_override_response.override.id) {
                 api.run("this.confirm_override_scheduled", {http_event: http_event});
               }
             }
