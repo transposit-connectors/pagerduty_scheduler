@@ -27,6 +27,7 @@
             } else if (action_payload.actions[0].action_id == "accept_override_request") {
               var start_date_time = stash.get("start_date") + " " + stash.get("start_time") + " UTC";
               var end_date_time = stash.get("end_date") + " " + stash.get("end_time") + " UTC";
+              console.log(start_date_time);
               console.log(start_date_time.toISOString());
               //api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString()});
             }
