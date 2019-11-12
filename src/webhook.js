@@ -9,8 +9,8 @@
 	  let user = api.user({type: "slack", workspaceId, userId});
 	  if (user) {
 		if (parsed_body.command == "/request-override") {
+          	console.log("parsed_body.command if");
 			var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
-			console.log("step 0 just ran");
         } 
 		if (parsed_body.payload) {
 		  console.log("parsed_body.payload if");
