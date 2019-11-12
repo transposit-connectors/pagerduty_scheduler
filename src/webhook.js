@@ -42,8 +42,8 @@
     if (user) {
       var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
     } else {
-      api.run("slack_webhook.post_message_to_incoming_webhook", {
-        webhook_url: response_url,
+      api.run("slack_webhook.respond_to_slash_command", {
+        http_event: http_event,
         text: 'Please configure your user at ' +  env.getBuiltin().appUrl
       });      
     }
