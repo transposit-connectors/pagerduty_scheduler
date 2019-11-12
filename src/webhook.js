@@ -21,7 +21,7 @@
 	});
   
 	if (parsed_body.payload) {
-          var user = api.user({type: "slack", workspaceId, userId});
+          user = api.user({type: "slack", workspaceId, userId});
           console.log("USER: ");
           console.log(user);      
 		  const action_payload = JSON.parse(parsed_body.payload);
