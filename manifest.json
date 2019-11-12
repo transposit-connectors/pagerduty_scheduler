@@ -210,6 +210,10 @@
         "name": "pagerduty-user-id",
         "description": "A user's PagerDuty ID, found in your profile URL. For example: organization-name.pagerduty.com/users/XXXXXXX",
         "type": "STRING"
+      }, {
+        "name": "pager_user_id",
+        "description": "Your PagerDuty user ID, found in your profile URL. For example: organization-name.pagerduty.com/users/XXXXXXX",
+        "type": "STRING"
       }],
       "userSettingsDisplay": "GENERATED"
     }
