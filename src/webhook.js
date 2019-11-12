@@ -6,7 +6,7 @@
   
 	setImmediate(() => {  
 	  var user = api.user({type: "slack", workspaceId, userId});
-      console.log("USER: ")
+      console.log("USER: ");
       console.log(user);
 	  if (user) {
 		if (parsed_body.command == "/request-override") {
