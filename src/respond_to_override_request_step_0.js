@@ -7,7 +7,7 @@
 		"type": "section",
 		"text": {
 			"type": "mrkdwn",
-			"text": "You've requested a PagerDuty override, when would you like the override for?"
+			"text": env.getBuiltin().appUrl + " You've requested a PagerDuty override, when would you like the override for?"
 		}
 	},
 	{
