@@ -20,10 +20,7 @@
 	  }    
 	});
   
-	if (parsed_body.payload) {
-          user = api.user({type: "slack", workspaceId, userId});
-          console.log("USER: ");
-          console.log(user);      
+	if (parsed_body.payload) {      
 		  const action_payload = JSON.parse(parsed_body.payload);
 		  if (action_payload.actions) {
 			  if (action_payload.actions[0].action_id == "start_date") {
