@@ -206,6 +206,11 @@
       }],
       "javascriptAPIVersion": "3",
       "source": "src",
+      "userSettings": [{
+        "name": "pagerduty_user_id",
+        "description": "Your PagerDuty user ID, found in your profile URL. For example: organization-name.pagerduty.com/users/XXXXXXX",
+        "type": "STRING"
+      }],
       "userSettingsDisplay": "GENERATED"
     }
   }
