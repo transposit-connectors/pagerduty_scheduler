@@ -12,7 +12,15 @@
           	console.log("parsed_body.command if");
 			var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
         } 
-		if (parsed_body.payload) {
+	  } else {
+		api.run("slack_webhook.respond_to_slash_command", {
+		  http_event: http_event,
+		  text: 'Please configure your user at ' +  env.getBuiltin().appUrl
+		});      
+	  }    
+	});
+  
+	if (parsed_body.payload) {
 		  console.log("parsed_body.payload if");
 		  const action_payload = JSON.parse(parsed_body.payload);
 		  console.log("action payload" + action_payload);
@@ -46,14 +54,10 @@
 				// }
 			  }
 			}
-		  }      
-	  } else {
-		api.run("slack_webhook.respond_to_slash_command", {
-		  http_event: http_event,
-		  text: 'Please configure your user at ' +  env.getBuiltin().appUrl
-		});      
-	  }    
-	});
+		  }       
+  
+  
+  
 	//return api.run("slack_webhook.acknowledge_slash_command"); 
 	return { status_code: 200 };
   
