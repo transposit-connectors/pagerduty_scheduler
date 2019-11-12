@@ -29,10 +29,8 @@
               var end_date_time_string = stash.get("end_date") + " " + stash.get("end_time") + " UTC";
               var start_date_time = new Date(start_date_time_string);
               var end_date_time = new Date(end_date_time_string);
-              
-              // user_setting.get()
-              
-              var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString()});
+                            
+              var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: user_setting.get("pagerduty_user_id")});
               console.log(pageduty_override_response);
               if (pageduty_override_response) {
                 api.run("this.confirm_override_scheduled", {http_event: http_event});
