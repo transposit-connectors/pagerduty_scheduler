@@ -2,14 +2,12 @@
 	const parsed_body = http_event.parsed_body;
 	const workspaceId = parsed_body.team_id;
 	const userId = parsed_body.user_id;
-	const response_url = parsed_body.response_url; 
-	
-	  let user = api.user({type: "slack", workspaceId, userId});
-  
+	const response_url = parsed_body.response_url;   
   
 	setImmediate(() => {  
-	  // let user = api.user({type: "slack", workspaceId, userId});
+	  let user = api.user({type: "slack", workspaceId, userId});
 	  if (user) {
+        console.log("USER: " + user)
 		if (parsed_body.command == "/request-override") {
 			var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
         } 
