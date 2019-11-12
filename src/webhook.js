@@ -10,9 +10,10 @@
 	  if (user) {
 		if (parsed_body.command == "/request-override") {
 			var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
-		} 
+			console.log("step 0 just ran");
+        } 
 		if (parsed_body.payload) {
-		  console.log("TESSTTTTT");
+		  console.log("parsed_body.payload if");
 		  const action_payload = JSON.parse(parsed_body.payload);
 		  console.log("action payload" + action_payload);
 		  if (action_payload.actions) {
