@@ -10,8 +10,17 @@
 	  if (user) {
 		if (parsed_body.command == "/request-override") {
 			var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
-        }
-		if (parsed_body.payload) {      
+        }          
+	  } else {
+		api.run("slack_webhook.respond_to_slash_command", {
+		  http_event: http_event,
+		  text: 'Please configure your user at ' +  env.getBuiltin().appUrl
+		});      
+	  }    
+    });
+  
+	if (parsed_body.payload) { 
+      var user = api.user();
 		  const action_payload = JSON.parse(parsed_body.payload);
 		  if (action_payload.actions) {
 			  if (action_payload.actions[0].action_id == "start_date") {
@@ -43,14 +52,7 @@
 				// }
 			  }
 			}
-		  }              
-	  } else {
-		api.run("slack_webhook.respond_to_slash_command", {
-		  http_event: http_event,
-		  text: 'Please configure your user at ' +  env.getBuiltin().appUrl
-		});      
-	  }    
-    });
+		  }      
 
 	   
 	//return api.run("slack_webhook.acknowledge_slash_command"); 
