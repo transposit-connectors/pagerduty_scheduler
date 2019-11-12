@@ -4,7 +4,7 @@
 	const userId = parsed_body.user_id;
 	const response_url = parsed_body.response_url; 
   
-	setImmediate(() => {  
+	//setImmediate(() => {  
 	  var user = api.user({type: "slack", workspaceId, userId});
       console.log(user);
 	  if (user) {
@@ -17,10 +17,10 @@
 		  text: 'Please configure your user at ' +  env.getBuiltin().appUrl
 		});      
 	  }    
-    });
+    //});
   
 	if (parsed_body.payload) { 
-      var user = api.user();
+      //var user = api.user();
       console.log(user);
 		  const action_payload = JSON.parse(parsed_body.payload);
 		  if (action_payload.actions) {
