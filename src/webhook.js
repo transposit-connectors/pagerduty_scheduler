@@ -11,6 +11,7 @@
       if (parsed_body.command == "/request-override") {
       	var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
       } else if (parsed_body.payload) {
+        console.log("ELSE IF");
     	const action_payload = JSON.parse(parsed_body.payload);
     	if (action_payload.actions) {
             if (action_payload.actions[0].action_id == "start_date") {
