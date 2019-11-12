@@ -9,7 +9,6 @@
 	  let user = api.user({type: "slack", workspaceId, userId});
 	  if (user) {
 		if (parsed_body.command == "/request-override") {
-          	console.log("parsed_body.command if");
 			var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
         } 
 	  } else {
@@ -21,9 +20,7 @@
 	});
   
 	if (parsed_body.payload) {
-		  console.log("parsed_body.payload if");
 		  const action_payload = JSON.parse(parsed_body.payload);
-		  console.log("action payload" + action_payload);
 		  if (action_payload.actions) {
 			  if (action_payload.actions[0].action_id == "start_date") {
 				stash.put("start_date",action_payload.actions[0].selected_date);
