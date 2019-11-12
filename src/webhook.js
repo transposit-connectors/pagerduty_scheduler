@@ -17,8 +17,7 @@
 		  text: 'Please configure your user at ' +  env.getBuiltin().appUrl
 		});      
 	  }    
-	});
-  
+      
 	if (parsed_body.payload) {      
 		  const action_payload = JSON.parse(parsed_body.payload);
 		  if (action_payload.actions) {
@@ -51,10 +50,9 @@
 				// }
 			  }
 			}
-		  }       
-  
-  
-  
+		  }     
+      	});
+    
 	//return api.run("slack_webhook.acknowledge_slash_command"); 
 	return { status_code: 200 };
   
