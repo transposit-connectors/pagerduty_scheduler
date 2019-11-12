@@ -12,6 +12,7 @@
       	var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
       } 
       if (parsed_body.payload) {
+        console.log("TESSTTTTT");
     	const action_payload = JSON.parse(parsed_body.payload);
         console.log("action payload" + action_payload);
     	if (action_payload.actions) {
