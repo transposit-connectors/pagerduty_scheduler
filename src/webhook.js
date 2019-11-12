@@ -21,6 +21,7 @@
   
 	if (parsed_body.payload) { 
       var user = api.user();
+      console.log(user);
 		  const action_payload = JSON.parse(parsed_body.payload);
 		  if (action_payload.actions) {
 			  if (action_payload.actions[0].action_id == "start_date") {
