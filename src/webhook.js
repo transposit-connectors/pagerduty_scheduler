@@ -23,7 +23,7 @@
 		  const action_payload = JSON.parse(parsed_body.payload);
       	  console.log(action_payload.team);
       	  console.log(action_payload.user);
-	  	  //var user = api.user({type: "slack", workspaceId, userId});
+	  	  var user = api.user({type: "slack", workspaceId: action_payload.team.id, userId: action_payload.user.id});
 		  if (action_payload.actions) {
 			  if (action_payload.actions[0].action_id == "start_date") {
 				stash.put("start_date",action_payload.actions[0].selected_date);
