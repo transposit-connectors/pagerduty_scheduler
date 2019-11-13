@@ -9,7 +9,7 @@
 	  var user = api.user({type: "slack", workspaceId, userId});
       //console.log("api.user() returns: " + api.user());
       //console.log("user id: " + user_setting.get("email"));
-      console.log(user);
+      //console.log(user);
 	  if (user) {
 		if (parsed_body.command == "/request-override") {
 			var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
@@ -27,7 +27,7 @@
 	  	var user = api.user({type: "slack", workspaceId: action_payload.team.id, userId: action_payload.user.id});
 	  	console.log("user created");
       	console.log(user);
-      	console.log(api.user());
+      	//console.log(api.user());
       		if (action_payload.actions) {
 			  if (action_payload.actions[0].action_id == "start_date") {
 				stash.put("start_date",action_payload.actions[0].selected_date);
@@ -53,7 +53,7 @@
                 console.log(api.listUsers());
 				console.log(user_setting.get("pagerduty_user_id"));                  
                 
-				var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: user_setting.get("pagerduty_user_id")});
+				var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: user_setting.get("pagerduty_user_id")}, {"asUser": "taylorbarnett42@gmail.com"});
 				console.log(pageduty_override_response);
 				if (pageduty_override_response) {
 				  api.run("this.confirm_override_scheduled", {http_event: http_event});
