@@ -7,8 +7,9 @@
   
 	setImmediate(() => {  
 	  var user = api.user({type: "slack", workspaceId, userId});
-      console.log("api.user() returns: " + api.user());
-      console.log("user id: " + user_setting.get("email"));
+      //console.log("api.user() returns: " + api.user());
+      //console.log("user id: " + user_setting.get("email"));
+      console.log(user);
 	  if (user) {
 		if (parsed_body.command == "/request-override") {
 			var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
