@@ -47,7 +47,7 @@
 				var end_date_time = new Date(end_date_time_string);
 				
 	  			var user = api.user({type: "slack", workspaceId: action_payload.team.id, userId: action_payload.user.id});
-				var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":user.id}[0]);                
+				var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":user.id})[0];                
                 
                 console.log(start_date_time.toISOString());
                 console.log(end_date_time.toISOString());
