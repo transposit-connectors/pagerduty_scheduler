@@ -9,7 +9,7 @@
 	  var user = api.user({type: "slack", workspaceId, userId});
       //console.log("api.user() returns: " + api.user());
       var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":"taylorbarnett42@gmail.com"});
-      //console.log(user);
+      console.log(pagerduty_user_id);
 	  if (user) {
 		if (parsed_body.command == "/request-override") {
 			var command_response = api.run("this.respond_to_override_request_step_0",{http_event: http_event});
