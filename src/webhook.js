@@ -48,11 +48,11 @@
 				var end_date_time = new Date(end_date_time_string);
 				
 				console.log(user_setting.get("pagerduty_user_id"));              
-				//var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: user_setting.get("pagerduty_user_id")});
-				// console.log(pageduty_override_response);
-				// if (pageduty_override_response) {
-				//   api.run("this.confirm_override_scheduled", {http_event: http_event});
-				// }
+				var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: user_setting.get("pagerduty_user_id")});
+				console.log(pageduty_override_response);
+				if (pageduty_override_response) {
+				  api.run("this.confirm_override_scheduled", {http_event: http_event});
+				}
 			  }
 			}
 		  }
