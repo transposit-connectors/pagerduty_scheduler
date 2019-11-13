@@ -8,7 +8,7 @@
 	setImmediate(() => {  
 	  var user = api.user({type: "slack", workspaceId, userId});
       //console.log("api.user() returns: " + api.user());
-      console.log("user id: " + user_setting.get("pagerduty_user_id"));
+      var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":"taylorbarnett42@gmail.com"});
       //console.log(user);
 	  if (user) {
 		if (parsed_body.command == "/request-override") {

@@ -1,6 +1,6 @@
 (params) => {
   
-  user_setting.get("pagerduty_user_id")
+  user_setting.get("pagerduty_user_id");
   
   return {
     mission: "complete"
