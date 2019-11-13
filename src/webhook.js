@@ -48,9 +48,9 @@
 				
 	  			var user = api.user({type: "slack", workspaceId: action_payload.team.id, userId: action_payload.user.id});
 				var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":user.id})[0];                
-				var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: pagerduty_user_id});
+				var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: pagerduty_user_id})[0];
 				
-              	console.log(pageduty_override_response);
+              	console.log(pageduty_override_response.override.id);
 				if (pageduty_override_response) {
 				  api.run("this.confirm_override_scheduled", {http_event: http_event});
 				}
