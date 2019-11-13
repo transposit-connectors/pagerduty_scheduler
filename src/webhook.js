@@ -27,7 +27,7 @@
       	console.log(action_payload);
 	  	var user = api.user({type: "slack", workspaceId: action_payload.team.id, userId: action_payload.user.id});
 	  	console.log("user created");
-      	console.log(user);
+      	console.log(user.id);
       	//console.log(api.user());
       		if (action_payload.actions) {
 			  if (action_payload.actions[0].action_id == "start_date") {
