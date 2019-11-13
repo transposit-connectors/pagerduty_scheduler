@@ -26,21 +26,6 @@
           "webhook": true
         }
       }, {
-        "id": "post_schedules_by_id_overrides",
-        "tql": {
-          "parameters": [{
-            "name": "start",
-            "type": "STRING"
-          }, {
-            "name": "end",
-            "type": "STRING"
-          }, {
-            "name": "user_id",
-            "type": "STRING"
-          }],
-          "tql": "SELECT * FROM pagerduty.post_schedules_by_id_overrides\n  WHERE id='PTQGTBE'\n  AND $body=(SELECT {\n    'override' : {\n      'start' : @start,\n      'end' : @end,\n      'user' : {\n        'id' : @user_id,\n        'type' : 'user_reference'\n      }\n    }\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
-        }
-      }, {
         "id": "respond_to_slash_command",
         "function": {
           "parameters": [{
@@ -176,6 +161,21 @@
         "function": {
           "js": "get_pagerduty_user_id.js",
           "lang": "js"
+        }
+      }, {
+        "id": "trash",
+        "tql": {
+          "parameters": [{
+            "name": "start",
+            "type": "STRING"
+          }, {
+            "name": "end",
+            "type": "STRING"
+          }, {
+            "name": "user_id",
+            "type": "STRING"
+          }],
+          "tql": "SELECT * FROM pagerduty.post_schedules_by_id_overrides\n  WHERE id='PTQGTBE'\n  AND $body=(SELECT {\n    'override' : {\n      'start' : @start,\n      'end' : @end,\n      'user' : {\n        'id' : @user_id,\n        'type' : 'user_reference'\n      }\n    }\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */\n "
         }
       }],
       "dataConnections": [{
