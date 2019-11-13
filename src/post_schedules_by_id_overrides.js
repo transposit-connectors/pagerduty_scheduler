@@ -4,10 +4,10 @@
   parameters.id = '<required_string>';
   parameters.$body = {
     override : {
-      start : '<required_date-time>',
-      end : '<required_date-time>',
+      start : params.start,
+      end : params.end,
       user : {
-        id : '<string>',
+        id : params.user_id,
         type : 'user_reference'
       }
     }

@@ -180,6 +180,16 @@
       }, {
         "id": "post_schedules_by_id_overrides",
         "function": {
+          "parameters": [{
+            "name": "user_id",
+            "type": "STRING"
+          }, {
+            "name": "start",
+            "type": "STRING"
+          }, {
+            "name": "end",
+            "type": "STRING"
+          }],
           "js": "post_schedules_by_id_overrides.js",
           "lang": "js"
         }
