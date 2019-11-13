@@ -24,25 +24,23 @@
        
 	if (parsed_body.payload) {
 		const action_payload = JSON.parse(parsed_body.payload);
-      	console.log(action_payload);
-      	console.log(pagerduty_user_id);      
-      		if (action_payload.actions) {
-			  if (action_payload.actions[0].action_id == "start_date") {
+      	if (action_payload.actions) {
+			if (action_payload.actions[0].action_id == "start_date") {
 				stash.put("start_date",action_payload.actions[0].selected_date);
-				  api.run("this.respond_to_override_request_step_1",{http_event: http_event});
-			  } else if (action_payload.actions[0].action_id == "end_date") {
+				api.run("this.respond_to_override_request_step_1",{http_event: http_event});
+			} else if (action_payload.actions[0].action_id == "end_date") {
 				stash.put("end_date",action_payload.actions[0].selected_date);
-				  api.run("this.respond_to_override_request_step_2",{http_event: http_event});              
-			  } else if (action_payload.actions[0].action_id == "start_time") {
+				api.run("this.respond_to_override_request_step_2",{http_event: http_event});              
+			} else if (action_payload.actions[0].action_id == "start_time") {
 				stash.put("start_time",action_payload.actions[0].selected_option.text.text);
-				  api.run("this.respond_to_override_request_step_3",{http_event: http_event});              
-			  } else if (action_payload.actions[0].action_id == "end_time") { 
+				api.run("this.respond_to_override_request_step_3",{http_event: http_event});              
+			} else if (action_payload.actions[0].action_id == "end_time") { 
 				stash.put("end_time",action_payload.actions[0].selected_option.text.text);
-				  api.run("this.respond_to_override_request_step_4",{http_event: http_event, start_date: stash.get("start_date"), end_date: stash.get("end_date"), start_time: stash.get("start_time"), end_time: stash.get("end_time")});                            
-			  } else if (action_payload.actions[0].action_id == "override_request_confirmation") {
-				  api.run("this.respond_to_override_request_step_5",{http_event: http_event}); 
+				api.run("this.respond_to_override_request_step_4",{http_event: http_event, start_date: stash.get("start_date"), end_date: stash.get("end_date"), start_time: stash.get("start_time"), end_time: stash.get("end_time")});                            
+			} else if (action_payload.actions[0].action_id == "override_request_confirmation") {
+				api.run("this.respond_to_override_request_step_5",{http_event: http_event}); 
 				api.run("this.share_override_request", {http_event: http_event,start_date: stash.get("start_date"), end_date: stash.get("end_date"), start_time: stash.get("start_time"), end_time: stash.get("end_time")});
-			  } else if (action_payload.actions[0].action_id == "accept_override_request") {
+			} else if (action_payload.actions[0].action_id == "accept_override_request") {
 				var start_date_time_string = stash.get("start_date") + " " + stash.get("start_time") + " UTC";
 				var end_date_time_string = stash.get("end_date") + " " + stash.get("end_time") + " UTC";
 				var start_date_time = new Date(start_date_time_string);
@@ -53,6 +51,7 @@
                 
                 console.log(start_date_time.toISOString());
                 console.log(end_date_time.toISOString());
+              	console.log(pagerduty_user_id);
                 
 				var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: pagerduty_user_id});
 				console.log(pageduty_override_response);
