@@ -29,7 +29,6 @@
       	console.log(user.id);
 		var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":user.id});
       	console.log(pagerduty_user_id);      
-      	//console.log(api.user());
       		if (action_payload.actions) {
 			  if (action_payload.actions[0].action_id == "start_date") {
 				stash.put("start_date",action_payload.actions[0].selected_date);
