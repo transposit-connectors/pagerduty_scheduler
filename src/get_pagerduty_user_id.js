@@ -1,10 +1,8 @@
 (params) => {
   
-  user_setting.get("pagerduty_user_id");
+  var user_id = user_setting.get("pagerduty_user_id");
   
-  return {
-    mission: "complete"
-  };
+  return user_id;
 }
 
 /*
