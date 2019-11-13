@@ -1,4 +1,5 @@
 ({ http_event }) => {
+  	console.log(http_event);
 	const parsed_body = http_event.parsed_body;
 	const workspaceId = parsed_body.team_id;
 	const userId = parsed_body.user_id;
@@ -19,7 +20,6 @@
     });
        
 	if (parsed_body.payload) {
-      	console.log(http_event);
 		  const action_payload = JSON.parse(parsed_body.payload);
 		  if (action_payload.actions) {
 			  if (action_payload.actions[0].action_id == "start_date") {
