@@ -48,9 +48,11 @@
 				var start_date_time = new Date(start_date_time_string);
 				var end_date_time = new Date(end_date_time_string);
 				
-	  	var user = api.user({type: "slack", workspaceId: action_payload.team.id, userId: action_payload.user.id});
-      	console.log(user.id);
-		var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":user.id});                
+	  			var user = api.user({type: "slack", workspaceId: action_payload.team.id, userId: action_payload.user.id});
+				var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":user.id});                
+                
+                console.log(start_date_time.toISOString());
+                console.log(end_date_time.toISOString());
                 
 				var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: pagerduty_user_id});
 				console.log(pageduty_override_response);
