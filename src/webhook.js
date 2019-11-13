@@ -26,8 +26,9 @@
 		const action_payload = JSON.parse(parsed_body.payload);
       	console.log(action_payload);
 	  	var user = api.user({type: "slack", workspaceId: action_payload.team.id, userId: action_payload.user.id});
-	  	console.log("user created");
       	console.log(user.id);
+		var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":user.id});
+      	console.log(pagerduty_user_id);      
       	//console.log(api.user());
       		if (action_payload.actions) {
 			  if (action_payload.actions[0].action_id == "start_date") {
