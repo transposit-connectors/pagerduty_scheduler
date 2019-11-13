@@ -1,5 +1,6 @@
 (params) => {
   
+  console.log(api.listUsers);
   var user_id = user_setting.get("pagerduty_user_id");
   
   return user_id;
