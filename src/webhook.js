@@ -3,7 +3,6 @@
 	const parsed_body = http_event.parsed_body;
 	const workspaceId = parsed_body.team_id;
 	const userId = parsed_body.user_id;
-	const response_url = parsed_body.response_url; 
   
 	setImmediate(() => {  
 	  var user = api.user({type: "slack", workspaceId, userId});
