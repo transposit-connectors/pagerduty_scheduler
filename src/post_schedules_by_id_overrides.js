@@ -14,13 +14,6 @@
   };
   return api.run('pagerduty.post_schedules_by_id_overrides', parameters);
   
-  
-  
-  
-  
-  return {
-    mission: "complete"
-  };
 }
 
 /*
