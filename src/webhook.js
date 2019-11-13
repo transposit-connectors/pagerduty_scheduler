@@ -19,7 +19,7 @@
     });
        
 	if (parsed_body.payload) {
-      	console.log(api.listUsers());
+      	console.log(workspaceId);
 		  const action_payload = JSON.parse(parsed_body.payload);
 		  if (action_payload.actions) {
 			  if (action_payload.actions[0].action_id == "start_date") {
