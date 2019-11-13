@@ -24,6 +24,7 @@
        
 	if (parsed_body.payload) {
 		const action_payload = JSON.parse(parsed_body.payload);
+      	console.log(action_payload);
 	  	var user = api.user({type: "slack", workspaceId: action_payload.team.id, userId: action_payload.user.id});
 	  	console.log("user created");
       	console.log(user);
