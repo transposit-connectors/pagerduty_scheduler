@@ -176,6 +176,12 @@
           "js": "confirm_override_scheduled.js",
           "lang": "js"
         }
+      }, {
+        "id": "get_pagerduty_user_id",
+        "function": {
+          "js": "get_pagerduty_user_id.js",
+          "lang": "js"
+        }
       }],
       "dataConnections": [{
         "ref": "slack_identify.raw",
