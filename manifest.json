@@ -38,7 +38,7 @@
             "name": "user_id",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM pagerduty.post_schedules_by_id_overrides\n  WHERE id='PTQGTBE'\n  AND $body=(SELECT {\n    'override' : {\n      'start' : @start,\n      'end' : @end,\n      -- 'id' : '<string>',\n      'user' : {\n        -- 'summary' : '<string>',\n        -- 'html_url' : '<url>',\n        -- 'self' : '<url>',\n        'id' : @user_id,\n        'type' : 'user_reference'\n      }\n    }\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+          "tql": "SELECT * FROM pagerduty.post_schedules_by_id_overrides\n  WHERE id='PTQGTBE'\n  AND $body=(SELECT {\n    'override' : {\n      'start' : @start,\n      'end' : @end,\n      'user' : {\n        'id' : @user_id,\n        'type' : 'user_reference'\n      }\n    }\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
       }, {
         "id": "respond_to_slash_command",
@@ -160,11 +160,6 @@
           }],
           "js": "share_override_request.js",
           "lang": "js"
-        }
-      }, {
-        "id": "delete_schedules_by_id_overrides_by_override_id",
-        "tql": {
-          "tql": "SELECT * FROM pagerduty.delete_schedules_by_id_overrides_by_override_id\n  WHERE override_id='Q0E1PA6F9W034V'\n  AND id='PTQGTBE'\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
       }, {
         "id": "confirm_override_scheduled",
