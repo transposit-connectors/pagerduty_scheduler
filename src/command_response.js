@@ -2,7 +2,6 @@
   
   const parameters = {};
   parameters.http_event = params.http_event;
-  parameters.text = 'hello, world!';
   parameters.blocks = [
 	{
 		"type": "section",
