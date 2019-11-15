@@ -51,6 +51,7 @@
 						api.run("this.confirm_override_scheduled", {http_event: http_event});
 					}
 				}
+            }
 	  } else {
 		  api.run("slack_webhook.respond_to_slash_command", {
 				http_event: http_event,
