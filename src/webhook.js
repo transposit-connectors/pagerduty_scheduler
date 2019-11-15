@@ -57,6 +57,7 @@
 		  api.run("slack_webhook.respond_to_interaction", {
 				http_event: http_event,
             	replace_original: false,
+            	response_type: 'ephemeral',
 				text: 'Please first configure your user at ' +  env.getBuiltin().appUrl + ' before accepting an override request'
 		  }); 
 	  }
