@@ -53,7 +53,6 @@
 				}
             }
 	  } else {
-        // error happens on this run
 		  api.run("slack_webhook.respond_to_interaction", {
 				http_event: http_event,
             	replace_original: false,
