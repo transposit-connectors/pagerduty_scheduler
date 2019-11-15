@@ -19,6 +19,7 @@
   });
 	 
   if (parsed_body.payload) {
+      console.log("111111");
 	  const action_payload = JSON.parse(parsed_body.payload);
 		var user = api.user({type: "slack", workspaceId: action_payload.team.id, userId: action_payload.user.id});                
 		if (user) {
@@ -53,6 +54,7 @@
 				}
 				}
 	  } else {
+          console.log("22222");
 		  api.run("slack_webhook.respond_to_slash_command", {
 				http_event: http_event,
 				text: 'Please configure your user at ' +  env.getBuiltin().appUrl
