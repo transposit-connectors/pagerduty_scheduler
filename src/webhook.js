@@ -53,6 +53,7 @@
 				}
             }
 	  } else {
+        // error happens on this run
 		  api.run("slack_webhook.respond_to_slash_command", {
 				http_event: http_event,
 				text: 'Please configure your user at ' +  env.getBuiltin().appUrl
