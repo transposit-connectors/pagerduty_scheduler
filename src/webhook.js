@@ -42,7 +42,7 @@
 					var start_date_time_string = stash.get(user.id + "_start_date") + " " + stash.get(user.id + "_start_time") + " UTC";
 					var end_date_time_string = stash.get(user.id + "_end_date") + " " + stash.get(user.id + "_end_time") + " UTC";
 					console.log(user.id);
-                  	console.log(stash.get(user.id + "_start_date");
+                  	console.log(stash.get(user.id + "_start_date"));
                     
                     var start_date_time = new Date(start_date_time_string);
 					var end_date_time = new Date(end_date_time_string);
