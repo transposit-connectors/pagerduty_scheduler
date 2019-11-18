@@ -142,6 +142,9 @@
           }, {
             "name": "end_time",
             "type": "STRING"
+          }, {
+            "name": "value",
+            "type": "STRING"
           }],
           "js": "share_override_request.js",
           "lang": "js"

@@ -15,7 +15,7 @@
 			"accessory": {
 				"type": "button",
               	"action_id": "accept_override_request",
-              	"value": "1234",
+              	"value": params.value,
 				"text": {
 					"type": "plain_text",
 					"text": "Yes",
