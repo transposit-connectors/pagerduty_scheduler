@@ -41,7 +41,7 @@
 				} else if (action_payload.actions[0].action_id == "accept_override_request") {
 					var start_date_time_string = stash.get(user.id + "_start_date") + " " + stash.get(user.id + "_start_time") + " UTC";
 					var end_date_time_string = stash.get(user.id + "_end_date") + " " + stash.get(user.id + "_end_time") + " UTC";
-					console.log(user.id);
+					console.log(user.id + "_start_date");
                   	console.log(stash.get(user.id + "_start_date"));
                     
                     var start_date_time = new Date(start_date_time_string);
