@@ -34,6 +34,8 @@
 					api.run("this.respond_to_override_request_step_3",{http_event: http_event});              
 				} else if (action_payload.actions[0].action_id == "end_time") { 
 					stash.put(user.id + "_end_time",action_payload.actions[0].selected_option.text.text);
+					var start_date_time_string = stash.get(user.id + "_start_date") + " " + stash.get(user.id + "_start_time") + " UTC";
+					var end_date_time_string = stash.get(user.id + "_end_date") + " " + stash.get(user.id + "_end_time") + " UTC";                   
 					api.run("this.respond_to_override_request_step_4",{http_event: http_event, start_date_time: start_date_time_string, end_date_time: end_date_time_string});                            
 				} else if (action_payload.actions[0].action_id == "override_request_confirmation") {
 					api.run("this.respond_to_override_request_step_5",{http_event: http_event}); 
