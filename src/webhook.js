@@ -37,15 +37,15 @@
 					api.run("this.respond_to_override_request_step_4",{http_event: http_event, start_date: stash.get(user.id + "_start_date"), end_date: stash.get(user.id + "_end_date"), start_time: stash.get(user.id + "_start_time"), end_time: stash.get(user.id + "_end_time")});                            
 				} else if (action_payload.actions[0].action_id == "override_request_confirmation") {
 					api.run("this.respond_to_override_request_step_5",{http_event: http_event}); 
-					api.run("this.share_override_request", {http_event: http_event, start_date: stash.get(user.id + "_start_date"), end_date: stash.get(user.id + "_end_date"), start_time: stash.get(user.id + "_start_time"), end_time: stash.get(user.id + "_end_time")});
-				} else if (action_payload.actions[0].action_id == "accept_override_request") {
 					var start_date_time_string = stash.get(user.id + "_start_date") + " " + stash.get(user.id + "_start_time") + " UTC";
-					var end_date_time_string = stash.get(user.id + "_end_date") + " " + stash.get(user.id + "_end_time") + " UTC";
-					console.log(user.id + "_start_date");
-                  	console.log(action_payload.actions[0].value);
+					var end_date_time_string = stash.get(user.id + "_end_date") + " " + stash.get(user.id + "_end_time") + " UTC";                  
+					
+                  	api.run("this.share_override_request", {http_event: http_event, start_date: stash.get(user.id + "_start_date"), end_date: stash.get(user.id + "_end_date"), start_time: stash.get(user.id + "_start_time"), end_time: stash.get(user.id + "_end_time")});
+				} else if (action_payload.actions[0].action_id == "accept_override_request") {
+                  	var date_time = action_payload.actions[0].value);
                   
-                    var start_date_time = new Date(start_date_time_string);
-					var end_date_time = new Date(end_date_time_string);
+                    //var start_date_time = new Date(start_date_time_string);
+					//var end_date_time = new Date(end_date_time_string);
 
 					var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":user.id})[0];
                   	
