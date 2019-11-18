@@ -39,8 +39,8 @@
 					api.run("this.respond_to_override_request_step_5",{http_event: http_event}); 
 					var start_date_time_string = stash.get(user.id + "_start_date") + " " + stash.get(user.id + "_start_time") + " UTC";
 					var end_date_time_string = stash.get(user.id + "_end_date") + " " + stash.get(user.id + "_end_time") + " UTC";                  
-					
-                  	api.run("this.share_override_request", {http_event: http_event, start_date: stash.get(user.id + "_start_date"), end_date: stash.get(user.id + "_end_date"), start_time: stash.get(user.id + "_start_time"), end_time: stash.get(user.id + "_end_time")});
+					var combined_date_time_string = start_date_time_string + "-" + end_date_time_string;
+                  	api.run("this.share_override_request", {http_event: http_event, value: combined_date_time_string, start_date: stash.get(user.id + "_start_date"), end_date: stash.get(user.id + "_end_date"), start_time: stash.get(user.id + "_start_time"), end_time: stash.get(user.id + "_end_time")});
 				} else if (action_payload.actions[0].action_id == "accept_override_request") {
                   	var date_time = action_payload.actions[0].value);
                   
