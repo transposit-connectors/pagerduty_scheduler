@@ -43,7 +43,7 @@
                   	api.run("this.share_override_request", {http_event: http_event, value: combined_date_time_string, start_date: stash.get(user.id + "_start_date"), end_date: stash.get(user.id + "_end_date"), start_time: stash.get(user.id + "_start_time"), end_time: stash.get(user.id + "_end_time")});
 				} else if (action_payload.actions[0].action_id == "accept_override_request") {
                   	var date_time = action_payload.actions[0].value);
-                  
+                  	console.log(date_time);
                     //var start_date_time = new Date(start_date_time_string);
 					//var end_date_time = new Date(end_date_time_string);
 
