@@ -39,22 +39,17 @@
 					api.run("this.respond_to_override_request_step_5",{http_event: http_event}); 
 					var start_date_time_string = stash.get(user.id + "_start_date") + " " + stash.get(user.id + "_start_time") + " UTC";
 					var end_date_time_string = stash.get(user.id + "_end_date") + " " + stash.get(user.id + "_end_time") + " UTC";                  
-					var combined_date_time_string = start_date_time_string + "," + end_date_time_string;
-                  	api.run("this.share_override_request", {http_event: http_event, value: combined_date_time_string, start_date: stash.get(user.id + "_start_date"), end_date: stash.get(user.id + "_end_date"), start_time: stash.get(user.id + "_start_time"), end_time: stash.get(user.id + "_end_time")});
+                  	api.run("this.share_override_request", {http_event: http_event, value: start_date_time_string + "," + end_date_time_string, start_date: stash.get(user.id + "_start_date"), end_date: stash.get(user.id + "_end_date"), start_time: stash.get(user.id + "_start_time"), end_time: stash.get(user.id + "_end_time")});
 				} else if (action_payload.actions[0].action_id == "accept_override_request") {
                   	var combined_date_time = action_payload.actions[0].value;
                     var split_combined_date_time = combined_date_time.split(',');
                     var start_date_time = new Date(split_combined_date_time[0]);
 					var end_date_time = new Date(split_combined_date_time[1]);
-                  
-                  	console.log(start_date_time);
-                    console.log(end_date_time);
 
 					var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":user.id})[0];
                   	
 					var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: pagerduty_user_id})[0];
 
-					console.log(pageduty_override_response);
 					if (pageduty_override_response.override.id) {
 						api.run("this.confirm_override_scheduled", {http_event: http_event});
 					}
