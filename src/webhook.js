@@ -51,14 +51,14 @@
                   	console.log(start_date_time);
                     console.log(end_date_time);
 
-					// var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":user.id})[0];
+					var pagerduty_user_id = api.run("this.get_pagerduty_user_id", {}, {"asUser":user.id})[0];
                   	
-					// var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: pagerduty_user_id})[0];
+					var pageduty_override_response = api.run("this.post_schedules_by_id_overrides", {start: start_date_time.toISOString(), end: end_date_time.toISOString(), user_id: pagerduty_user_id})[0];
 
-					// console.log(pageduty_override_response);
-					// if (pageduty_override_response.override.id) {
-					// 	api.run("this.confirm_override_scheduled", {http_event: http_event});
-					// }
+					console.log(pageduty_override_response);
+					if (pageduty_override_response.override.id) {
+						api.run("this.confirm_override_scheduled", {http_event: http_event});
+					}
 				}
             }
 	  } else {
