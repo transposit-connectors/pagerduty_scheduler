@@ -98,16 +98,10 @@
             "type": "STRING",
             "required": true
           }, {
-            "name": "start_date",
+            "name": "start_date_time",
             "type": "STRING"
           }, {
-            "name": "end_date",
-            "type": "STRING"
-          }, {
-            "name": "start_time",
-            "type": "STRING"
-          }, {
-            "name": "end_time",
+            "name": "end_date_time",
             "type": "STRING"
           }],
           "js": "untitled.js",
@@ -131,19 +125,10 @@
             "name": "http_event",
             "type": "STRING"
           }, {
-            "name": "start_date",
+            "name": "start_date_time",
             "type": "STRING"
           }, {
-            "name": "end_date",
-            "type": "STRING"
-          }, {
-            "name": "start_time",
-            "type": "STRING"
-          }, {
-            "name": "end_time",
-            "type": "STRING"
-          }, {
-            "name": "value",
+            "name": "end_date_time",
             "type": "STRING"
           }],
           "js": "share_override_request.js",

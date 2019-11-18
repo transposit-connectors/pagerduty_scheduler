@@ -9,13 +9,12 @@
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "Someone has request on-call coverage for " + params.start_date + " at " + params.start_time 
-          + " until " + params.end_date + " at " + params.end_time + ". Can you take it?"
+				"text": "Someone has request on-call coverage for " + params.start_date_time + " until " + params.end_date_time + ". Can you take it?"
 			},
 			"accessory": {
 				"type": "button",
               	"action_id": "accept_override_request",
-              	"value": params.value,
+              	"value": params.start_date_time + "," + params.end_date_time,
 				"text": {
 					"type": "plain_text",
 					"text": "Yes",
