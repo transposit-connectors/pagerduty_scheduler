@@ -2,11 +2,18 @@
 
   const parameters = {};
   parameters.http_event = params.http_event;
-  parameters.delete_original = false;
+  parameters.delete_original = true;
   parameters.replace_original = false;
   // parameters.text = '<string>';
   // parameters.attachments = (SELECT []);
   parameters.blocks = [
+	{
+		"type": "section",
+		"text": {
+			"type": "mrkdwn",
+			"text": "You've requested a PagerDuty override for " + params.start_date_time + " until " + params.end_date_time + ". Please confirm."
+		}
+	},    
 	{
 		"type": "section",
 		"text": {
