@@ -2,8 +2,8 @@
 
   const parameters = {};
   parameters.http_event = params.http_event;
-  parameters.delete_original = true;
-  parameters.replace_original = false;
+  parameters.delete_original = false;
+  parameters.replace_original = true;
   // parameters.text = '<string>';
   // parameters.attachments = (SELECT []);
   parameters.blocks = [
