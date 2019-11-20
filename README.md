@@ -1,6 +1,6 @@
 # PagerDuty Scheduler Bot
 
-A Slack command application to schedule PagerDuty overrides for on-call schedules. 
+A Slack command to make the process of scheduling a PagerDuty override more efficient, encouraged, and documented.
 
 Time estimate: 10 minutes to setup
 
