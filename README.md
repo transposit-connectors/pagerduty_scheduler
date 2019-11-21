@@ -29,6 +29,8 @@ After you have forked [the application](https://console.transposit.com/t/transpo
 6. In your Slack App configure page, select Install App, and allow permission to access your workspace
 7. You should now be able to use the `/request-override` command in your workspace
 
+> Note: Each user who uses the app will get prompted to add their PagerDuty user ID
+
 ## Go further
 
 * Team members could be asked for coverage privately instead of a channel
