@@ -207,6 +207,8 @@
         "type": "STRING"
       }],
       "userSettingsDisplay": "GENERATED"
-    }
+    },
+    "description": "A Slack command to make the process of scheduling a PagerDuty override more efficient, encouraged, and documented.",
+    "displayName": "PagerDuty Scheduler Bot"
   }
 }
