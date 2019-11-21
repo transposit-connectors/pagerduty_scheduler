@@ -5,13 +5,13 @@ A Slack command to make the process of scheduling a PagerDuty override more effi
 Time estimate: 10 minutes to setup
 
 Before you begin, you need: 
-- A Transposit account with a forked version of [the application](https://console.transposit.com/t/transposit-sample/pagerduty-scheduler?fork=true)
+- A Transposit account with a forked version of [the application](https://console.transposit.com/t/transposit-sample/pagerduty_scheduler?fork=true)
 - A Slack workspace where you can create and install apps 
 - A PagerDuty account with a schedule
 
 ## Setup Transposit and PagerDuty
 
-After you have forked [the application](https://console.transposit.com/t/transposit-sample/pagerduty-scheduler?fork=true) and logged into PagerDuty:
+After you have forked [the application](https://console.transposit.com/t/transposit-sample/pagerduty_scheduler?fork=true) and logged into PagerDuty:
 
 1. In PagerDuty, navigate to the schedule you want use with the Slack command, the url will look something like this: https://example.pagerduty.com/schedules#ABCDEFG
 2. Copy the schedule ID at the end of the URL (E.g. ABCDEFG for the URL above)
